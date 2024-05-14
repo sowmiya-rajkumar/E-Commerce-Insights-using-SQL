@@ -17,31 +17,26 @@ Below is the screenshot of all the tables in the dataset and how they relate to 
 
 ### Total orders made by customers
 
-SELECT COUNT(*) total_orders
-FROM orders;
+<img width="320" alt="Total_Orders_Made_by_customers" src="https://github.com/sowmiya-rajkumar/E-Commerce-Insights-using-SQL/assets/98767488/dee59631-0070-48d5-9ed6-f2a631d51f29">
+
 
 
 ### Average order price
 
-SELECT AVG(price) average_price
-FROM order_items;
+<img width="319" alt="Average_order_price" src="https://github.com/sowmiya-rajkumar/E-Commerce-Insights-using-SQL/assets/98767488/2c52098f-d0e5-4245-9a8f-b18f6d43642d">
+
 
 
 ### Cities with most Orders
 
-SELECT customer_city, COUNT(order_id) order_count
-FROM orders o JOIN customers c ON o.customer_id = c.customer_id
-GROUP BY customer_city
-ORDER BY order_count DESC;
+<img width="597" alt="Cities with most Orders" src="https://github.com/sowmiya-rajkumar/E-Commerce-Insights-using-SQL/assets/98767488/423047e6-62b1-49c8-9539-b375bf46c951">
+
 
 
 ### Cities with its average order value
 
-SELECT customer_city, ROUND(CAST(AVG(payment_value) AS numeric),2) AS avg_order_value
-FROM orders o JOIN customers c ON o.customer_id = c.customer_id
-				JOIN order_payments op ON o.order_id = op.order_id
-GROUP BY customer_city
-ORDER BY avg_order_value DESC;
+<img width="781" alt="Cities with its average order value" src="https://github.com/sowmiya-rajkumar/E-Commerce-Insights-using-SQL/assets/98767488/d920c29d-4483-473f-b82d-897162ddba5f">
+
 
 
 ## Customers
@@ -49,63 +44,30 @@ ORDER BY avg_order_value DESC;
 
 ### Total Customers
 
-SELECT COUNT(*) total_customer_count
-FROM customers;
+<img width="348" alt="Total_customers" src="https://github.com/sowmiya-rajkumar/E-Commerce-Insights-using-SQL/assets/98767488/4c802321-c5b3-4a52-b4a3-ec43e4c98f0f">
+
 
 
 ### Customer segmentation based on purchase frequency
 
-CREATE VIEW customer_segment_purchase_frequency AS
-	WITH order_count AS (SELECT customer_unique_id, COUNT(order_purchase_timestamp) total_orders_per_customer
-						FROM customers c JOIN orders o ON c.customer_id=o.customer_id
-						GROUP BY customer_unique_id
-						ORDER BY total_orders_per_customer DESC)
-	SELECT oc.customer_unique_id, total_orders_per_customer, customer_id, 
-				CASE
-				WHEN total_orders_per_customer > 6 THEN 'Loyal Customers'
-				WHEN total_orders_per_customer > 1 AND total_orders_per_customer < 6 THEN 'Moderate Buyers'
-				ELSE 'First time Buyers'
-				END AS customer_purchase_frequency
-	FROM order_count oc JOIN customers c ON oc.customer_unique_id = c.customer_unique_id;
+<img width="1027" alt="Customer segmentation based on purchase frequency" src="https://github.com/sowmiya-rajkumar/E-Commerce-Insights-using-SQL/assets/98767488/389ebe46-23bd-41a8-950e-59bd0a933b76">
 
 
 ### Average order price for each customer segment
 
-SELECT customer_purchase_frequency, ROUND(CAST(AVG(payment_value) AS numeric), 2) average_price_per_cust_segment
-FROM customer_segment_purchase_frequency seg_freq 
-					JOIN orders o ON o.customer_id = seg_freq.customer_id
-					JOIN order_payments op ON op.order_id = o.order_id
-GROUP BY customer_purchase_frequency;
+<img width="1040" alt="Average order price for each customer segment" src="https://github.com/sowmiya-rajkumar/E-Commerce-Insights-using-SQL/assets/98767488/08eee74c-4b10-4a94-a036-d6e2cb476eb8">
 
 
 ### Frequently purchased product category by "Loyal Customers"
 
-SELECT pcn.product_category_name_english, COUNT(*) total_by_Loyal_Customers
-FROM customer_segment_purchase_frequency cspf 
-								JOIN orders o ON cspf.customer_id = o.customer_id
-								JOIN order_items oi ON o.order_id = oi.order_id
-								JOIN products p ON oi.product_id = p.product_id
-								JOIN product_category_name pcn ON p.product_category_name = pcn.product_category_name
-WHERE customer_purchase_frequency = 'Loyal Customers'
-GROUP BY pcn.product_category_name_english
-ORDER BY total_by_Loyal_Customers DESC LIMIT 1;
+<img width="1029" alt="Frequently purchased product category by  Loyal Customers" src="https://github.com/sowmiya-rajkumar/E-Commerce-Insights-using-SQL/assets/98767488/15b907b3-00e7-4711-8098-8f4c68e97fdf">
+
 
 
 ### Top 3 product categories across all customer segments
 
-WITH customer_seg_prod_counts AS (SELECT customer_purchase_frequency, pcn.product_category_name_english, COUNT(*) counts
-								FROM customer_segment_purchase_frequency cspf 
-																JOIN orders o ON cspf.customer_id = o.customer_id
-																JOIN order_items oi ON o.order_id = oi.order_id
-																JOIN products p ON oi.product_id = p.product_id
-																JOIN product_category_name pcn ON p.product_category_name = pcn.product_category_name
-								GROUP BY customer_purchase_frequency, pcn.product_category_name_english
-								ORDER BY counts DESC),
-	prod_count_ranking AS (SELECT *, DENSE_RANK() OVER(PARTITION BY customer_purchase_frequency ORDER BY counts DESC) as counts_rank
-				FROM customer_seg_prod_counts)
-SELECT *
-FROM prod_count_ranking
-WHERE counts_rank <=3
+<img width="1276" alt="Top 3 product categories across all customer segments" src="https://github.com/sowmiya-rajkumar/E-Commerce-Insights-using-SQL/assets/98767488/f7ebe3d1-f484-4002-a236-d52329f12154">
+
 
 
 ### Product categories that are particularly popular with specific customer segments but not others
@@ -119,94 +81,36 @@ Conversely, "health_beauty" appears to be a preference primarily among first-tim
 
 ### Total review_score counts by star
 
-SELECT review_score as star, COUNT(*) AS star_count
-FROM order_reviews
-GROUP BY review_score
-ORDER bY review_score DESC;
+<img width="468" alt="Total review_score counts by star" src="https://github.com/sowmiya-rajkumar/E-Commerce-Insights-using-SQL/assets/98767488/0e3d1186-9c90-47cb-ac0a-510aefd7d736">
 
 
 ### Top 20 products with highest number of 5-star reviews
 
-SELECT p.product_id, COUNT(*) counts
-FROM order_items oite JOIN order_reviews orev ON oite.order_id = orev.order_id
-						JOIN products p ON oite.product_id = p.product_id
-WHERE review_score = 5
-GROUP BY p.product_id
-ORDER BY counts DESC LIMIT 20;
+<img width="705" alt="Top 20 products with highest number of 5-star reviews" src="https://github.com/sowmiya-rajkumar/E-Commerce-Insights-using-SQL/assets/98767488/3d1e8cfc-c2d2-4feb-81ea-71cfe24d9cf8">
+
 
 
 ### Top 20 products with highest number of 1-star reviews
 
-SELECT p.product_id, COUNT(*) counts
-FROM order_items oite JOIN order_reviews orev ON oite.order_id = orev.order_id
-						JOIN products p ON oite.product_id = p.product_id
-WHERE review_score = 1
-GROUP BY p.product_id
-ORDER BY counts DESC LIMIT 20;
+<img width="740" alt="Top 20 products with highest number of 1-star reviews" src="https://github.com/sowmiya-rajkumar/E-Commerce-Insights-using-SQL/assets/98767488/cacae23f-edd3-456e-9e0f-ff24d132cd10">
+
 
 
 ### Top 20 sellers with highest number of 5 star rating
 
-SELECT s.seller_id, COUNT(review_score) tot_5_star_review
-FROM order_reviews orev JOIN order_items oi ON orev.order_id = oi.order_id
-						JOIN sellers s ON s.seller_id = oi.seller_id
-WHERE review_score = 5
-GROUP BY s.seller_id
-ORDER BY tot_5_star_review DESC LIMIT 20;
+<img width="682" alt="Top 20 sellers with highest number of 5 star rating" src="https://github.com/sowmiya-rajkumar/E-Commerce-Insights-using-SQL/assets/98767488/2b7a2c4b-ca63-457e-bcf5-a6ce7ea15ca4">
+
 
 
 ### Top 20 sellers with highest number of 1 star rating
 
-SELECT s.seller_id, COUNT(review_score) tot_1_star_review
-FROM order_reviews orev JOIN order_items oi ON orev.order_id = oi.order_id
-						JOIN sellers s ON s.seller_id = oi.seller_id
-WHERE review_score = 1
-GROUP BY s.seller_id
-ORDER BY tot_1_star_review DESC LIMIT 20;
+<img width="691" alt="Top 20 sellers with highest number of 1 star rating" src="https://github.com/sowmiya-rajkumar/E-Commerce-Insights-using-SQL/assets/98767488/65cc0581-8422-4f08-b539-895ecf24be49">
+
 
 
 ### Breakdown of Star Ratings Based on Delivery Timeliness: No Delay, 1-5 Days Delay, 6-10 Days Delay, and Over 10 Days Delay.
 
-CREATE VIEW star_review_count_on_actual_estimate_diff AS
-	WITH actual_estimation_diff AS(SELECT *, order_delivered_customer_date - order_estimated_delivery_date 
-																AS diff_estimation_delivered
-								FROM orders),
-		hours_conversion AS (SELECT orev.order_id, customer_id, diff_estimation_delivered, review_score, 
-										(EXTRACT(epoch FROM diff_estimation_delivered)/3600) :: int AS tot_hours_difference
-							FROM actual_estimation_diff aed JOIN order_reviews orev ON aed.order_id = orev.order_id),
-		grouped_diff AS (SELECT *, CASE
-										WHEN tot_hours_difference <= 0 THEN 'No delay'
-										WHEN tot_hours_difference > 0 AND tot_hours_difference <= 120 THEN 'Delayed 1 - 5 days'
-										WHEN tot_hours_difference > 120 AND tot_hours_difference <= 240 THEN 'Delayed 6 - 10 days'
-										ELSE 'Greater than 10 days'
-										END AS delivered_difference
-							FROM hours_conversion),
-		segmented_days AS (SELECT delivered_difference, review_score, COUNT(*) total
-								FROM grouped_diff
-								GROUP BY delivered_difference, review_score)
-	SELECT delivered_difference,
-		MAX (CASE WHEN review_score = 5 THEN total END) AS Five_star,
-		MAX (CASE WHEN review_score = 4 THEN total END) AS Four_star,
-		MAX (CASE WHEN review_score = 3 THEN total END) AS Three_star,
-		MAX (CASE WHEN review_score = 2 THEN total END) AS Two_star,
-		MAX (CASE WHEN review_score = 1 THEN total END) AS One_star
-	FROM segmented_days
-	GROUP BY delivered_difference
-	ORDER BY CASE
-				WHEN delivered_difference = 'No delay' THEN 1
-				WHEN delivered_difference = 'Delayed 1 - 5 days' THEN 2
-				WHEN delivered_difference = 'Delayed 6 - 10 days' THEN 3
-				ELSE 4
-			END;
+![Breakdown of Star Ratings Based on Delivery Timeliness](https://github.com/sowmiya-rajkumar/E-Commerce-Insights-using-SQL/assets/98767488/32ae1b12-0047-4d87-88e6-2003883129f2)
 
-
-SELECT delivered_difference AS delay_difference,
-		CAST(ROUND((five_star*1.0/(five_star+four_star+three_star+two_star+one_star))*100, 2) AS varchar(5)) ||'%' AS Five_star,
-		CAST(ROUND((four_star*1.0/(five_star+four_star+three_star+two_star+one_star))*100, 2) AS varchar(5)) ||'%' AS Four_star,
-		CAST(ROUND((three_star*1.0/(five_star+four_star+three_star+two_star+one_star))*100, 2) AS varchar(5)) ||'%' AS Three_star,
-		CAST(ROUND((two_star*1.0/(five_star+four_star+three_star+two_star+one_star))*100, 2) AS varchar(5)) ||'%' AS Two_star,
-		CAST(ROUND((one_star*1.0/(five_star+four_star+three_star+two_star+one_star))*100, 2) AS varchar(5)) ||'%' AS One_star,
-		CAST(100 AS varchar(5)) ||'%' AS Total
-FROM star_review_count_on_actual_estimate_diff;
 
 As observed in the results, an increase in the gap between the actual delivery date and the estimated date corresponds to a higher count of negative reviews, while a decrease in this gap leads to fewer negative reviews.
