@@ -60,6 +60,13 @@ Below is the screenshot of all the tables in the dataset and how they relate to 
 
 ### 2.2 Customer segmentation based on purchase frequency
 
+Segmented customers based on the number of times they made a purchase and categorized them into "First-time Buyers", "Moderate Buyers" and "Loyal Customers". <br />
+<br />
+Query explanation:<br />
+1. Count the number of times each customer made a purchase <br />
+2. Segment the customers based on the purchase frequency
+
+
 <img width="1027" alt="Customer segmentation based on purchase frequency" src="https://github.com/sowmiya-rajkumar/E-Commerce-Insights-using-SQL/assets/98767488/389ebe46-23bd-41a8-950e-59bd0a933b76">
 
 #### **Result:**
