@@ -17,7 +17,10 @@ Below is the screenshot of all the tables in the dataset and how they relate to 
 
 ### 1.1 Total orders made by customers
 
-<img width="320" alt="Total_Orders_Made_by_customers" src="https://github.com/sowmiya-rajkumar/E-Commerce-Insights-using-SQL/assets/98767488/dee59631-0070-48d5-9ed6-f2a631d51f29">
+```
+SELECT COUNT(*) total_orders
+FROM orders;
+```
 
 #### **Result:**
 ![ord-1](https://github.com/sowmiya-rajkumar/E-Commerce-Insights-using-SQL/assets/98767488/307c186f-f532-41e8-b513-42f7f2a36881)
