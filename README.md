@@ -62,7 +62,7 @@ Below is the screenshot of all the tables in the dataset and how they relate to 
 
 Segmented customers based on the number of times they made a purchase and categorized them into "First-time Buyers", "Moderate Buyers" and "Loyal Customers". <br />
 <br />
-Query explanation:<br />
+**Query explanation:**<br />
 1. Count the number of times each customer made a purchase <br />
 2. Segment the customers based on the purchase frequency
 
@@ -93,7 +93,7 @@ Query explanation:<br />
 
 <img width="1276" alt="Top 3 product categories across all customer segments" src="https://github.com/sowmiya-rajkumar/E-Commerce-Insights-using-SQL/assets/98767488/f7ebe3d1-f484-4002-a236-d52329f12154">
 
-Query explanation: <br />
+**Query explanation:** <br />
 1. Count the number of times a product category is bought by each customer segment. <br />
 2. Using DENSE_RANK() get the top 3 product categories.
    
@@ -138,7 +138,7 @@ Conversely, "health_beauty" appears to be a preference primarily among first-tim
 
 ![Breakdown of Star Ratings Based on Delivery Timeliness](https://github.com/sowmiya-rajkumar/E-Commerce-Insights-using-SQL/assets/98767488/32ae1b12-0047-4d87-88e6-2003883129f2)
 
-Query explanation: <br />
+**Query explanation:** <br />
 1. cte - actual_estimation_diff -> created a column that shows the difference between the estimated and actual delivery date. <br />
 2. cte - hours_conversion -> converted the difference from seconds to hours. <br />
 3. cte - grouped_diff -> Categorizing the delivery time as "No delay", "Delayed 1 - 5 days", "Delayed 6 - 10 days" and "Greater than 10 days". <br />
@@ -178,7 +178,7 @@ As observed in the results, an increase in the gap between the actual delivery d
 
 ![tot20-top3](https://github.com/sowmiya-rajkumar/E-Commerce-Insights-using-SQL/assets/98767488/3b9ed6e6-f711-4122-a9aa-70693ed7298a)
 
-Query explanation: <br />
+**Query explanation:** <br />
 1. cte - low_rating_sellers -> Identifies the top 20 sellers with the highest number of 1-star reviews by counting the occurrences of 1-star reviews for each seller. <br />
 2. cte - seller_products_lowrate -> Retrieves the order details (order_id, product_id, review_score) for each product associated with the sellers identified in the previous CTE.<br />
 3. cte - ranking_products -> Counts the occurrences of each product associated with the low-rated sellers<br />
@@ -214,7 +214,7 @@ The findings indicate that the top 3 products from each top 20 sellers receiving
 
 ![freight](https://github.com/sowmiya-rajkumar/E-Commerce-Insights-using-SQL/assets/98767488/e2870cda-92a5-410a-b92a-faf51677fb37)
 
-Query Explanation:<br />
+**Query Explanation:** <br />
 1. cte - prod_from_lowrating_sellers_freight -> Calculates the average freight value for products associated with sellers receiving low ratings. <br />
 2. cte - same_prod_freightval_when_5star - > Calculates the average freight value for the same products where it received 5-star ratings. <br />
 3. Main query -> selects the product_id, average freight value, and average freight value when the product received 5-star ratings from the two CTEs.  <br />
