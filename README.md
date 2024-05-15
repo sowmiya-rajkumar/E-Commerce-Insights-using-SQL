@@ -225,5 +225,10 @@ In summary, this query aims to identify any discrepancies in freight values for 
 ![sell6](https://github.com/sowmiya-rajkumar/E-Commerce-Insights-using-SQL/assets/98767488/7e1a67b7-be91-451f-aa66-a92d221cb31d)
 
 - The findings suggest that negative reviews cannot be solely attributed to freight values, as the same products with 5-star ratings show similar freight values. <br />
-- Thus, neither delivery delays nor freight values appear to be significant factors contributing to the negative ratings of these products. However, with access to additional data such as product quality and review descriptions, a deeper analysis could be conducted to identify the root cause of the negative reviews. 
+- Thus, neither delivery delays nor freight values appear to be significant factors contributing to the negative ratings of these products. However, with access to additional data    such as product quality, review descriptions, customer service issues, or any other potential reasons for dissatisfaction, a deeper analysis could be conducted to identify the root cause of the negative reviews.
+- Then the findings can be shared with relevant teams within the e-commerce platform, such as product management, customer support, or fulfillment teams. This information can help    them address specific issues and improve overall customer satisfaction.
 
+
+Thank you for taking the time to explore this project! <br />
+
+If you have any questions, suggestions, or just want to say hello, feel free to reach out to me via [email](sowmiya.rajkumar2021@gmail.com).
