@@ -19,7 +19,7 @@ Below is the screenshot of all the tables in the dataset and how they relate to 
 
 <img width="320" alt="Total_Orders_Made_by_customers" src="https://github.com/sowmiya-rajkumar/E-Commerce-Insights-using-SQL/assets/98767488/dee59631-0070-48d5-9ed6-f2a631d51f29">
 
-**Result:**
+#### **Result:**
 ![ord-1](https://github.com/sowmiya-rajkumar/E-Commerce-Insights-using-SQL/assets/98767488/307c186f-f532-41e8-b513-42f7f2a36881)
 
 
@@ -27,7 +27,7 @@ Below is the screenshot of all the tables in the dataset and how they relate to 
 
 <img width="319" alt="Average_order_price" src="https://github.com/sowmiya-rajkumar/E-Commerce-Insights-using-SQL/assets/98767488/2c52098f-d0e5-4245-9a8f-b18f6d43642d">
 
-**Result:**
+#### **Result:**
 ![ord-2](https://github.com/sowmiya-rajkumar/E-Commerce-Insights-using-SQL/assets/98767488/3b68d2e2-8c34-45eb-8bfe-cf4fadb83e40)
 
 
@@ -35,7 +35,7 @@ Below is the screenshot of all the tables in the dataset and how they relate to 
 
 <img width="597" alt="Cities with most Orders" src="https://github.com/sowmiya-rajkumar/E-Commerce-Insights-using-SQL/assets/98767488/423047e6-62b1-49c8-9539-b375bf46c951">
 
-**Result:**
+#### **Result:**
 ![ord-3](https://github.com/sowmiya-rajkumar/E-Commerce-Insights-using-SQL/assets/98767488/9148f396-9376-4af7-a5be-4ae73df80e2b)
 
 
@@ -43,7 +43,7 @@ Below is the screenshot of all the tables in the dataset and how they relate to 
 
 <img width="781" alt="Cities with its average order value" src="https://github.com/sowmiya-rajkumar/E-Commerce-Insights-using-SQL/assets/98767488/d920c29d-4483-473f-b82d-897162ddba5f">
 
-**Result:**
+#### **Result:**
 ![ord-4](https://github.com/sowmiya-rajkumar/E-Commerce-Insights-using-SQL/assets/98767488/460db4f2-abf2-4e00-8806-4541531037ff)
 
 
@@ -54,7 +54,7 @@ Below is the screenshot of all the tables in the dataset and how they relate to 
 
 <img width="348" alt="Total_customers" src="https://github.com/sowmiya-rajkumar/E-Commerce-Insights-using-SQL/assets/98767488/4c802321-c5b3-4a52-b4a3-ec43e4c98f0f">
 
-**Result:**
+#### **Result:**
 ![cust-1](https://github.com/sowmiya-rajkumar/E-Commerce-Insights-using-SQL/assets/98767488/b4182ea0-1bb2-472d-9f8b-86d1bf0ae2bc)
 
 
@@ -62,7 +62,7 @@ Below is the screenshot of all the tables in the dataset and how they relate to 
 
 <img width="1027" alt="Customer segmentation based on purchase frequency" src="https://github.com/sowmiya-rajkumar/E-Commerce-Insights-using-SQL/assets/98767488/389ebe46-23bd-41a8-950e-59bd0a933b76">
 
-**Result:**
+#### **Result:**
 ![cust-2](https://github.com/sowmiya-rajkumar/E-Commerce-Insights-using-SQL/assets/98767488/5058e8c1-8d47-4600-bc08-17797164549d)
 
 
@@ -70,7 +70,7 @@ Below is the screenshot of all the tables in the dataset and how they relate to 
 
 <img width="1040" alt="Average order price for each customer segment" src="https://github.com/sowmiya-rajkumar/E-Commerce-Insights-using-SQL/assets/98767488/08eee74c-4b10-4a94-a036-d6e2cb476eb8">
 
-**Result:**
+#### **Result:**
 ![cust-3](https://github.com/sowmiya-rajkumar/E-Commerce-Insights-using-SQL/assets/98767488/7173841e-d7e7-4ff7-b569-f408fcae4a9a)
 
 
@@ -78,7 +78,7 @@ Below is the screenshot of all the tables in the dataset and how they relate to 
 
 <img width="1029" alt="Frequently purchased product category by  Loyal Customers" src="https://github.com/sowmiya-rajkumar/E-Commerce-Insights-using-SQL/assets/98767488/15b907b3-00e7-4711-8098-8f4c68e97fdf">
 
-**Result:**
+#### **Result:**
 ![cust-4](https://github.com/sowmiya-rajkumar/E-Commerce-Insights-using-SQL/assets/98767488/deb7d241-5be3-4982-ba39-8ef843af2f55)
 
 
@@ -86,7 +86,7 @@ Below is the screenshot of all the tables in the dataset and how they relate to 
 
 <img width="1276" alt="Top 3 product categories across all customer segments" src="https://github.com/sowmiya-rajkumar/E-Commerce-Insights-using-SQL/assets/98767488/f7ebe3d1-f484-4002-a236-d52329f12154">
 
-**Result:**
+#### **Result:**
 ![cust-5](https://github.com/sowmiya-rajkumar/E-Commerce-Insights-using-SQL/assets/98767488/6a7b8d57-d31c-4851-865c-fba9136ecbd9)
 
 
@@ -103,7 +103,7 @@ Conversely, "health_beauty" appears to be a preference primarily among first-tim
 
 <img width="468" alt="Total review_score counts by star" src="https://github.com/sowmiya-rajkumar/E-Commerce-Insights-using-SQL/assets/98767488/0e3d1186-9c90-47cb-ac0a-510aefd7d736">
 
-**Result:**
+#### **Result:**
 ![rev-1](https://github.com/sowmiya-rajkumar/E-Commerce-Insights-using-SQL/assets/98767488/901712dd-8cd8-425f-8541-e2fbb31104fc)
 
 
@@ -111,7 +111,7 @@ Conversely, "health_beauty" appears to be a preference primarily among first-tim
 
 <img width="705" alt="Top 20 products with highest number of 5-star reviews" src="https://github.com/sowmiya-rajkumar/E-Commerce-Insights-using-SQL/assets/98767488/3d1e8cfc-c2d2-4feb-81ea-71cfe24d9cf8">
 
-**Result:**
+#### **Result:**
 ![rev-2](https://github.com/sowmiya-rajkumar/E-Commerce-Insights-using-SQL/assets/98767488/0acbb3b5-3e94-43aa-ad03-69be40c38432)
 
 
@@ -119,7 +119,7 @@ Conversely, "health_beauty" appears to be a preference primarily among first-tim
 
 <img width="740" alt="Top 20 products with highest number of 1-star reviews" src="https://github.com/sowmiya-rajkumar/E-Commerce-Insights-using-SQL/assets/98767488/cacae23f-edd3-456e-9e0f-ff24d132cd10">
 
-**Result:**
+#### **Result:**
 ![rev-3](https://github.com/sowmiya-rajkumar/E-Commerce-Insights-using-SQL/assets/98767488/7c9de283-06f6-4768-888e-8a9a590d5e47)
 
 
@@ -127,7 +127,7 @@ Conversely, "health_beauty" appears to be a preference primarily among first-tim
 
 <img width="682" alt="Top 20 sellers with highest number of 5 star rating" src="https://github.com/sowmiya-rajkumar/E-Commerce-Insights-using-SQL/assets/98767488/2b7a2c4b-ca63-457e-bcf5-a6ce7ea15ca4">
 
-**Result:**
+#### **Result:**
 ![rev-4](https://github.com/sowmiya-rajkumar/E-Commerce-Insights-using-SQL/assets/98767488/a4546fc9-2872-4eb3-9da2-7a7b10b1dafb)
 
 
@@ -135,7 +135,7 @@ Conversely, "health_beauty" appears to be a preference primarily among first-tim
 
 <img width="691" alt="Top 20 sellers with highest number of 1 star rating" src="https://github.com/sowmiya-rajkumar/E-Commerce-Insights-using-SQL/assets/98767488/65cc0581-8422-4f08-b539-895ecf24be49">
 
-**Result:**
+#### **Result:**
 ![rev-5](https://github.com/sowmiya-rajkumar/E-Commerce-Insights-using-SQL/assets/98767488/ecb5cbeb-b6f1-4012-8300-68d56b6aeb0b)
 
 
